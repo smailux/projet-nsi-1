@@ -1,6 +1,127 @@
 import time
 import random
 
+porte = r'''          ---   .    ____        -----      ______   -----        .
+  ___     / \             .....................      ____   / \
+        .`   `.  --  ..:::::`````````````````:::::..      .`   `.
+  ---   | ^ ^ |    .::::````          (_     ````::::. -- | ^ ^ `
+        | ^ ^ |  .::``                       _)    ``::.  | ^ ^ | --
+____     `...`  .::`              .-.      (_        `::.  `...`
+        .-.!_  .::`       _)     /   \                `::.   ! ____
+       / / `-`.:`                `-.-`            _)    `:..```.
+ --    ` |  `.|:`      _)         .`.       (_          `:/` |  \
+       | |   |`.               _/^---^\_                  |     . --
+ ___    \ .  `|               \-------../         (_      \   `.`
+        ` :   `        _)      `.\:::/.`       (_   )_    |`   || ___
+        | |  .|      _(         | | |`|                   / ` . |
+    --  | `. | \                `.\ /.`                   `.  | |--
+        |`.   `|                 |[ ]|           (_       | .`  |____
+__    .`\ |  .`\                 `.^.`                    \ |.  .
+     .`-.\`. | |        _)        (:)                     | ||| |
+   .`    \`..` .             _..--```--.._      (_       /`-._.-`| ---
+   |       `-..`.         .-`             `-.           |      .-`.
+    \            `-.    .`  ..            .. `.        .`-._.-`    `.
+--   )              `-./    `::.        .::`   \   _.-`             /
+     `._/-..          /       `::.    .::`      \-`              .-`
+         ::.`-.      ``        `::   ::`        ``       _..-\_.`
+         :::   `._   | \         `   `         / |    .-`   .:: _____
+____     :::      `-.|  `  .----..___..----.  `  | .-`      :::
+         :::          \ |  _..--.     .--.._  | /-`         ::: ---
+         :::   _)     | ` /     |     |     \ ` |  (        :::
+   --    :::          )   |   _.`     `._   |   (   )_      :::____
+    ____ :::          /`. \_.`   )\ /(   `._/ .`\     (_    :::
+         :::       .-`|  `  -->-@ /     \ @->--`  |-.         :::
+         :::    .-`   \         | / \ |         /  `-.      :::  ---
+ ----    `` _.-`       |        )/   \(        |      `-.   :::  _____
+  _.-=--..-`          . \ /\               /\ /          `-. ``
+ /.._    `.        .-`   .\ `-.\.\\.//./.-` /.`-.           `---.._
+|    `.    \    .-`      | `.             .` |   `-.                \ 
+ \    _\.   `.-`         |   `-././.\.\.-`   |      `.               |
+  `.-`  |   /::::::::::: \                   /::::::::`.      ,-.    /
+ - |   /   /        ----  `-.             .-`     ----  `.    |  \_.`
+__ \   | .`     _____        `-._._._._.-`     ____      |    |   |
+    `--`                                                 `-.  `._ / --
+                                                            `...-`'''
+coffres = r"""
+                 .--------------------------------...          .--------------------------------...
+               ,'-------------------------------,'   |       ,'-------------------------------,'   |
+              /                                /     |      /                                /     |
+             /________________________________/    ,'|     /________________________________/    ,'|
+             |               ..               |  ,'  |     |               ..               |  ,'  |
+             |___________-==/88\==-___________|,' /) |     |___________-==/88\==-___________|,' /) |.
+             |  \    \     ((  ))     /    /  |  (/  |-. . |  \    \     ((  ))     /    /  |  (/  |-. .
+             |   \    \     \{}/     /    /   |    .' .  . |   \    \     \{}/     /    /   |    .' .  .
+          . '|    \    \     )(     / _  /    |    ,   .  .|    \    \     )(     / _  /    |    ,   .  .
+         . . |\    \    \    \/    _.( ~-.   /|\ ,' .   . .|    \    \    \/    _.( ~-.    /|\ ,' .   . .
+       ` .  -`_-.--.______..._____( ,/  ` \~-.|,' .   . .  |_-.--.______..._____( ,/  ` \~-.|,' .   .
+        .  `    .     .       .  ,'\. ~-  . , .  .  .   .   .  `    .     .       .  ,'\. ~-  . , .  .  .   .
+           .  `   .     ,   .      , ~~-.' .  .    .         .  `   .     ,   .      , ~~-.' .  .    .     """
+sphinx = r"""
+                              .sSSSSSSSs
+                              sSS=""^^^"s
+                  /\       , /  \_\_\|_/_)
+                 /';;     /| \\\/.-. .-./
+                / \;|    /. \,S'  -   - |
+               / -.;|    | '.SS     _|  ;
+              ; '-.;\,   |'-.SS\   __  /S
+              | _  ';\\.  \' SSS\_____/SS
+              |  '- ';\\.  \_SSS[_____]SS
+              \ '--.-';;-. __SSS/\    SSS
+               \  .--' ';;'.=SSS`\\_\_SSS
+                `._ .-'` _';;..=.=.=.\.=\
+                   ;-._-'  _.;\.=.=.=.|.=|
+         ,     _.-'    `"=._  ;\=.=__/__/
+         )\ .'`   __        ".;|.=.=.=./
+         (_\   .-`  '.   |    \/=.=.=/`
+          /\\         \-,|     |.--'|
+         /  \`,       //  \    | |  |
+        ( (__) )  _.-'--,  \   | |  '--,
+         ;----' -'--,__}}}  \  '--, __}}}
+         \_________}}}       \___}}}
+  """
+
+gargouille = r"""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⡀⠀⠙⢶⣦⣤⠀⠀⡀⢀⠀⠀⣤⣴⡶⠋⠀⢀⣄⠀⠀⠀⠀⠀
+⠀⠀⢀⣠⡾⠋⠙⠷⣤⡀⠛⠋⣠⣿⣇⣸⣿⣄⠙⠛⢀⣤⠾⠋⠙⢷⣄⡀⠀⠀
+⠀⠀⣾⢋⣠⣶⠀⣦⣄⠙⠃⣸⣿⣿⣿⣿⣿⣿⣇⠘⠋⣠⣴⠀⣶⣄⡙⣷⠀⠀
+⠀⢸⣿⣿⣿⡟⢀⣿⣿⣿⠀⢿⣤⣈⡉⢉⣁⣤⡿⠀⣿⣿⣿⡀⢻⣿⣿⣿⡇⠀
+⠀⢸⣿⣿⣿⣷⡾⠿⠿⠿⠓⠀⠛⠋⣁⣈⠙⠛⠀⠚⠿⠿⠿⢷⣾⣿⣿⣿⡇⠀
+⠀⠘⣿⡟⠛⠟⠀⠀⠀⣴⣾⣿⣦⣈⣉⣉⣁⣴⣿⣷⣦⠀⠀⠀⠻⠛⢻⣿⠃⠀
+⠀⠀⠹⠀⠀⠀⠀⠀⠀⢹⣿⣿⠛⣿⣿⣿⣿⠛⣿⣿⡏⠀⠀⠀⠀⠀⠀⠏⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⣴⡀⢻⣿⡆⢸⣿⣿⡇⢰⣿⡟⢀⣦⣄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢿⣿⣷⠈⣿⡇⠀⣭⣭⠀⢸⣿⠁⣾⣿⡿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⡇⢸⣿⠀⢻⡟⠀⣿⡇⢸⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⠘⣿⣇⠘⠃⣸⣿⠃⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣿⡄⢻⣿⡀⢀⣿⡟⢠⣿⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠐⠋⠛⠁⠼⢿⡇⢸⡿⠧⠈⠛⠙⠂⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"""
+
+sorcier = r"""
+                    ____ 
+                  .'* *.'
+               __/_*_*(_
+              / _______ \
+             _\_)/___\(_/_ 
+            / _((\- -/))_ \
+            \ \())(-)(()/ /
+             ' \(((()))/ '
+            / ' \)).))/ ' \
+           / _ \ - | - /_  \
+          (   ( .;''';. .'  )
+          _\"__ /    )\ __"/_
+            \/  \   ' /  \/
+             .'  '...' ' )
+              / /  |  \ \
+             / .   .   . \
+            /   .     .   \
+           /   /   |   \   \
+         .'   /    b    '.  '.
+     _.-'    /     Bb     '-. '-._ 
+ _.-'       |      BBb       '-.  '-. 
+(___________\____.dBBBb.________)____)"""
+
+
+
 biblio_ascii = r"""   ____________________________________________________
   |____________________________________________________|
   | __     __   ____   ___ ||  ____    ____     _  __  |
@@ -80,7 +201,7 @@ def wait_petits_points(n):
 
 def rappel_trajet(n, trajet):
     if n > len(trajet) :
-        print("erreur : trop loin !")
+        print(f"erreur : trop loin !({len(trajet)} maximum)")
     else :
         for i in range(len(trajet)-1, len(trajet)-n-1, -1):
             print(trajet[i], end="")
@@ -149,6 +270,9 @@ def jeu():
 
         elif entree == "d":
             direction = input("Vers quelle direction souhaitez-vous vous diriger ? (n/s/o/e)")
+            if direction not in 'nsoe':
+                print("erreur : saisie erronée")
+                continue
             direction = 'nsoe'.index(direction)            #pour obtenir un nombre -> guide_dir 
             if guide_dir[salle][direction] != 0 :
                 destination = guide_dir[salle][direction]
@@ -174,8 +298,14 @@ def jeu():
                 
             elif salle == 2 :
                 if not has_fought :
-                    
+                    print(gargouille, end="\n\n")
                     print("Attention ! Un monstre vous attaque !\nPour le vaincre, vous devez réussir à le battre au Pierre-Feuille-Ciseau..")
+                    
+                    
+                    
+
+
+                    
                     time.sleep(1.5)
                     nb_monstre = random.randint(1,3)
                     display = ['pierre', 'feuille', 'ciseau'][nb_monstre - 1]
@@ -194,7 +324,8 @@ def jeu():
                         if "Totem de bénediction" not in inventaire :
                             pv -= 50
                         else :
-                            print('Mais le totem de bénediction vous protège de tous types de dégâts')
+                            print('Mais le totem de bénediction réduit vos dégâts')
+                            pv -= 25
                         has_fought = True
                     else :
                         print(" vous ! Vous récuperez une peau de gargouille !")
@@ -207,12 +338,13 @@ def jeu():
                     
             elif salle == 3 :
                 if not has_opened :
+                    print(coffres, end="\n\n")
                     entree = input("En rentrant dans la salle, vous apercevez deux coffres en bois ancien\nL'un contient un totem de bénediction tandis que l'autre contient une malédiction ancienne, êtes-vous prêt à prendre ce risque ? (y/n)")
                     if entree == 'y':
                         wait_petits_points(1.2)
                         nb = random.randint(1,2)
                         if nb == 1 :
-                            print("Hourrah, vous êtes tombés sur le totem de bénediction\nVous êtes désormais immunisé à tout type de dégât et béneficiez d'un deuxième essai utilisable sur un des puzzles de ce donjon")
+                            print("Hourrah, vous êtes tombés sur le totem de bénediction\nVous êtes désormais protégé de tout type de dégât à hauteur de 50 % et béneficiez d'un deuxième essai utilisable sur un des puzzles de ce donjon")
                             inventaire.append("Totem de bénediction")
                             second_try_active = True
                         else :
@@ -232,12 +364,14 @@ def jeu():
                     mot = "artefact"
                     guess = ""
                     guess_dis = ["_", "_", "_","_", "_", "_", "_", "_"]
-                    print("Vous avez à votre disposition toutes les lettres de l'alphabet, et 8 emplacements vides")
+                    print("Sur la mosaïque, un clavier de lettres de l'alphabet, de A à Z, surmonté d'une sorte d'afficheur antique..")
+                    time.sleep(0.3)
+                    print("On dirait que vous avez affaire à un jeu du pendu !")
                     comp = 1
                     while comp < 11 and not has_found:
                         print()
                         print("".join(guess_dis))
-                        saisie = str(input("Saisir une lettre ou un mot"))
+                        saisie = str(input("Saisir une lettre ou un mot\t"))
                         if len(saisie) == 1 and saisie.lower() in mot :
                             print("Super, elle est dans le mot")
                             guess += saisie
@@ -245,12 +379,13 @@ def jeu():
                             guess = saisie
                         else :
                             print(f'Aïe, plus que {11-comp} essais !')
+                            comp += 1
                         for u in range(len(mot)) :
                             for i in range(len(guess)):
                                 if mot[u] == guess[i]:
                                     guess_dis[u] = mot[u]
                             has_found = "".join(guess_dis) == mot
-                        comp += 1
+                        
                         
                     if  has_found :
                         #récompense blabla
@@ -269,7 +404,9 @@ def jeu():
                     print("Rien à voir ici !")
             elif salle == 4 :
                 if not has_been_defied :
+                    print(sorcier, end='\n\n')
                     print("En entrant dans la salle, vous tombez nez à nez avec un mage ennemi, qui vous défie à un jeu ancestral.")
+                    
                     time.sleep(1.5)
                     print("Il suffit de deviner un nombre voulu en moins de 10 essais")
                     nb_mystere = random.randint(1, 99)
@@ -344,6 +481,7 @@ def jeu():
             elif salle == 6 :
                 
                 if has_been_defied :
+                    print(sphinx, end='\n\n')
                     print("Vous entrez dans la salle.\nDevant vous, un sphinx en roche, endormi")
                     wait_petits_points(0.7)
                     print("A cause du bruit de vos pas, il se réveille :\n'Oh vil explorateur, toi qui t'es aventuré dans les profondeurs mêmes de la Terre\n Sauras-tu résoudre ma charade ?'")
@@ -371,11 +509,11 @@ def jeu():
                                 break
                                 
                             elif compteur < 3 :
-                                print('"MAUVAIS REPONSE", vous sentez l`aura meurtière de la créture s`intensifier')
+                                print('"MAUVAIS REPONSE", vous sentez l`aura meurtière de la créature s`intensifier')
                             else :
                                 print("'Vous ne méritez pas de sortir de ce donjon', affirme le sphinx avant de sortir de son deux ses mains immenses et de vous étrangler à mort...")
                                 if second_try_active :
-                                    print("Mais le totem de bénedction vous sauve de la mort et vous donne une seconde chance, utilisez-la bien !")
+                                    print("Mais le totem de bénedction vous sauve de la mort et vous donne une seconde chance, utilisez-la bien !\nPartez de la salle et revenez lorsque vous vous sentez prêt.")
                                     compteur = 0
                                     second_try_active = False
                                 else :
@@ -387,7 +525,9 @@ def jeu():
                         print("C'est bien.. les humains intelligents ont meilleur goût.")
                         
                 if not has_been_defied  :
+                    print(porte, end="\n\n")
                     print("Une lourde porte antique vous bloque le passage pour l'instant, faites demi-tour")
+                    
                     
                     
         elif entree == "q" :
@@ -399,10 +539,10 @@ def jeu():
         time.sleep(0.8)
         print('\n')
     
-    
-    
+jeu()    
         
         
         
     
     
+
